@@ -1,0 +1,6 @@
+@DAppAPI_HostAddress = http://localhost:5022
+
+GET {{DAppAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
