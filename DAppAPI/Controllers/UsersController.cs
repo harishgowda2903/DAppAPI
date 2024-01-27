@@ -1,5 +1,7 @@
 ﻿using DAppAPI.Data;
+using DAppAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAppAPI.Controllers
 {
@@ -13,9 +15,18 @@ namespace DAppAPI.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-            return View();
+            var users = await _context.Users.ToListAsync();
+            return users;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AppUser>> GetUser(int id)
+        {
+            return await _context.Users.FindAsync(id);
         }
     }
 }
