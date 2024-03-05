@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAppAPI.Controllers
 {
-    [ApiController]
-    [Route("api/Users")]
-    public class UsersController : Controller
+    
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
