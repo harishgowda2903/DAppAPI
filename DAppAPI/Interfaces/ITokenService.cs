@@ -4,6 +4,6 @@ namespace DAppAPI.Interfaces
 {
     public interface ITokenService
     {
-        public string CreateToken(AppUser user);
+        string CreateToken(AppUser user);
     }
 }
